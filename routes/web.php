@@ -5,11 +5,15 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SiteController;
+
+Route::get('/', [AuthController::class, 'login'])->name('login');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/postlogin', [AuthController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/postregister', [AuthController::class, 'postregister'])->name('postregister');
 
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
