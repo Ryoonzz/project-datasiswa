@@ -32,7 +32,7 @@
         <!-- END NAVBAR -->
         <!-- LEFT SIDEBAR -->
         <br>
-        @include('layouts.includes._sidebar')
+        @include('layouts.includes._sidebarSiswa')
         <!-- END LEFT SIDEBAR -->
         <!-- MAIN -->
         @yield('content')

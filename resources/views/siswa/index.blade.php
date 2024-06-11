@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.masterSiswa')
 
 @section('content')
     <div class="main">
@@ -14,7 +14,16 @@
                                         siswa</a>
                                 </div>
                             </div>
+
                             <div class="panel-body">
+                                <form action="/siswa" method="get">
+                                    <div class="input-group">
+                                        <input name="cari" class="form-control" type="text" placeholder="Cari data siswa">
+                                        <span class="input-group-btn"><button class="btn btn-primary"
+                                                type="submit">Cari</button></span>
+                                    </div>
+                                </form>
+                                <hr>
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
